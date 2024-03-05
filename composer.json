@@ -1,0 +1,25 @@
+{
+    "require": {
+        "wikimedia/composer-merge-plugin": "dev-master"
+    },
+    "extra": {
+        "merge-plugin": {
+            "require": [
+                "../bitrix/composer-bx.json"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "php_interface/classes/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "wikimedia/composer-merge-plugin": true
+        }
+    },
+    "require-dev": {
+        "kint-php/kint": "^5.1"
+    }
+}
