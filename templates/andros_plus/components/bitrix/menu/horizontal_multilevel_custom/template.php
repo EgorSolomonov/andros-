@@ -1,11 +1,13 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
-
 <? if (!empty($arResult)) : ?>
-	<!-- <ul id="horizontal-multilevel-menu">
+	<ul class="mainMenu js-mainmenu">
 
 		<?
+
+		// d($arResult);
 		$previousLevel = 0;
-		foreach ($arResult as $arItem) : ?>
+		foreach ($arResult as $arItem) :
+		?>
 
 			<? if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel) : ?>
 				<?= str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
@@ -14,95 +16,55 @@
 			<? if ($arItem["IS_PARENT"]) : ?>
 
 				<? if ($arItem["DEPTH_LEVEL"] == 1) : ?>
-					<li><a href="<?= $arItem["LINK"] ?>" class="<? if ($arItem["SELECTED"]) : ?>root-item-selected<? else : ?>root-item<? endif ?>"><?= $arItem["TEXT"] ?></a>
-						<ul>
-						<? else : ?>
-							<li<? if ($arItem["SELECTED"]) : ?> class="item-selected" <? endif ?>><a href="<?= $arItem["LINK"] ?>" class="parent"><?= $arItem["TEXT"] ?></a>
-								<ul>
+					<li class="mainMenu__item is-dd is-dd--full">
+						<a href="<?= $arItem["LINK"] ?>" class="mainMenu__item_link <? if ($arItem["SELECTED"]) : ?>is-selected<? endif ?>"><?= $arItem["TEXT"] ?></a>
+						<div class="nav nav--level-1 nav--catalog">
+							<ul class="nav__inner is-custom-scrollbar">
+							<? else : ?>
+								<li class="nav__item is-dd is-open<? if ($arItem["SELECTED"]) : ?>is-selected<? endif ?>">
+									<a href="<?= $arItem["LINK"] ?>" class="nav__item_link"><?= $arItem["TEXT"] ?></a>
+									<ul class="nav nav--level-2">
+									<? endif ?>
+
+								<? else : ?>
+
+									<? if ($arItem["PERMISSION"] > "D") : ?>
+
+										<? if ($arItem["DEPTH_LEVEL"] == 1) : ?>
+											<li class="mainMenu__item">
+												<a href="<?= $arItem["LINK"] ?>" class="mainMenu__item_link <? if ($arItem["SELECTED"]) : ?>is-selectedroot-item<? endif ?>"><?= $arItem["TEXT"] ?></a>
+											</li>
+										<? else : ?>
+											<li class="nav__item <? if ($arItem["SELECTED"]) : ?>is-selected<? endif ?>">
+												<a class="nav__item_link <? if ($arItem["ADDITIONAL_LINKS"]["TOP_LABEL"] === "44" || $arItem["ADDITIONAL_LINKS"]["OFFERS"]) : ?>is-badge<? else : ?><? endif ?>" href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?><? if ($arItem["ADDITIONAL_LINKS"]["TOP_LABEL"] === "44") : ?><span class="badge">топ</span><? endif ?> <? if ($arItem["ADDITIONAL_LINKS"]["OFFERS"]) : ?><span class="badge"><?= $arItem["ADDITIONAL_LINKS"]["OFFERS"] ?></span><? endif ?></a>
+											</li>
+										<? endif ?>
+
+									<? else : ?>
+
+										<? if ($arItem["DEPTH_LEVEL"] == 1) : ?>
+											<li class="nav__item">
+												<a href="" class="nav__item_link <? if ($arItem["ADDITIONAL_LINKS"]["TOP_LABEL"] === "44") : ?>is-badge<? else : ?><? endif ?> <? if ($arItem["SELECTED"]) : ?>is-selected<? endif ?>" title="<?= GetMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a>
+											</li>
+										<? else : ?>
+											<li class="nav__item">
+												<a href="" class="nav__item_link" title="<?= GetMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a>
+											</li>
+										<? endif ?>
+
+									<? endif ?>
+
 								<? endif ?>
 
-							<? else : ?>
+								<? $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
 
-								<? if ($arItem["PERMISSION"] > "D") : ?>
+							<? endforeach ?>
 
-									<? if ($arItem["DEPTH_LEVEL"] == 1) : ?>
-										<li><a href="<?= $arItem["LINK"] ?>" class="<? if ($arItem["SELECTED"]) : ?>root-item-selected<? else : ?>root-item<? endif ?>"><?= $arItem["TEXT"] ?></a></li>
-									<? else : ?>
-										<li<? if ($arItem["SELECTED"]) : ?> class="item-selected" <? endif ?>><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
-					</li>
-				<? endif ?>
+							<? if ($previousLevel > 1) : //close last item tags
+							?>
+								<?= str_repeat("</ul></li>", ($previousLevel - 1)); ?>
+							<? endif ?>
 
-			<? else : ?>
-
-				<? if ($arItem["DEPTH_LEVEL"] == 1) : ?>
-					<li><a href="" class="<? if ($arItem["SELECTED"]) : ?>root-item-selected<? else : ?>root-item<? endif ?>" title="<?= GetMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a></li>
-				<? else : ?>
-					<li><a href="" class="denied" title="<?= GetMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a></li>
-				<? endif ?>
-
-			<? endif ?>
-
-		<? endif ?>
-
-		<? $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
-
-	<? endforeach ?>
-
-	<? if ($previousLevel > 1) : //close last item tags
-	?>
-		<?= str_repeat("</ul></li>", ($previousLevel - 1)); ?>
-	<? endif ?>
-
-	</ul>
-	<div class="menu-clear-left"></div> -->
-<? endif ?>
-
-<? //d($arResult);
-?>
-
-<? if (!empty($arResult)) : ?>
-	<div class="header__col header__col--nav">
-		<nav class="nav__wrapper">
-			<ul class="mainMenu js-mainmenu">
-
-				<? foreach ($arResult as $arItem) : ?>
-					<? if ($arItem['PERMISSION'] === "Z") : ?>
-						<? //d($arItem);
-						?>
-						<li class="mainMenu__item is-dd is-dd--full">
-							<a href="<?= $arItem["LINK"] ?>" class="<? if ($arItem["SELECTED"]) : ?>root-item-selected<? else : ?>root-item<? endif ?> mainMenu__item_link"><?= $arItem["TEXT"] ?></a>
-							 <div class="nav nav--level-1 nav--catalog">
-							<ul class="nav__inner is-custom-scrollbar">
-								<li class="nav__item is-dd is-open"> <a href="cosmetology.html" class="nav__item_link">Инъекционная
-										косметология</a>
-									<ul class="nav nav--level-2">
-										<li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Коррекция мимических морщин
-												ботулотоксином</a></li>
 									</ul>
-								</li>
-
-
-							</ul>
-						</div> 
-						</li>
-
-						<!-- <li class="mainMenu__item is-dd">
-					<a href="cosmetology.html" class="mainMenu__item_link">Косметология</a>
-
-
-					<ul class="nav nav--level-1 nav--catalog">
-						<li class="nav__item"> <a href="index.html" class="nav__item_link">Коррекция мимических морщин
-								ботулотоксином</a></li>
-					</ul>
-
-				</li> -->
-					<? else : ?>
-						<li class="mainMenu__item is-dd is-dd--full">
-							<a href="<?= $arItem["LINK"] ?>" class="<? if ($arItem["SELECTED"]) : ?>root-item-selected<? else : ?>root-item<? endif ?> mainMenu__item_link"><?= $arItem["TEXT"] ?></a>
-						</li>
-					<? endif ?>
-				<? endforeach ?>
-			</ul>
-		</nav>
-	</div>
-<? endif ?>
+									<div class="menu-clear-left"></div>
+								<? endif ?>

@@ -12,11 +12,11 @@ IncludeTemplateLangFile(__FILE__);
     // Bitrix files connection
     $APPLICATION->ShowHead();
     // CSS
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/base.min.css?_v=20240223161603");
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/custom.css?_v=20240223161603");
-    // JS
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/plugins.min.js?_v=20240223161603");
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/app.js?_v=20240223161603");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/base.min.css");
+    // Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/custom.css");
+    // // JS
+    // Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/plugins.min.js");
+    // Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/app.js");
     // TAGS AND FILES
     $asset = Asset::getInstance();
     $asset->addString("<link rel='apple-touch-icon' sizes='180x180' href='{$asset->getAssetPath("/assets/apple-touch-icon.png")}' />");
@@ -102,117 +102,29 @@ IncludeTemplateLangFile(__FILE__);
                                     </div>
                                 </div>
                                 <div class="c_slide__content is-custom-scrollbar">
-
-                                    <!--header menu-->
-                                    <? $APPLICATION->IncludeComponent(
-                                        "bitrix:menu",
-                                        "horizontal_multilevel_custom",
-                                        array(
-                                            "ROOT_MENU_TYPE" => "top",
-                                            "MENU_CACHE_TYPE" => "A",
-                                            "MENU_CACHE_TIME" => "36000000",
-                                            "MENU_CACHE_USE_GROUPS" => "N",
-                                            "MENU_CACHE_GET_VARS" => array(),
-                                            "MAX_LEVEL" => "3",
-                                            "CHILD_MENU_TYPE" => "top",
-                                            "USE_EXT" => "Y",
-                                            "DELAY" => "N",
-                                            "ALLOW_MULTI_SELECT" => "Y"
-                                        ),
-                                        false
-                                    ); ?>
-                                    <!-- <div class="header__col header__col--nav">
+                                    <div class="header__col header__col--nav">
                                         <nav class="nav__wrapper">
-                                            <ul class="mainMenu js-mainmenu">
-                                                <li class="mainMenu__item is-dd is-dd--full">
-                                                    <a href="plastic.html" class="mainMenu__item_link">Медицина</a>
-                                                    <div class="nav nav--level-1 nav--catalog">
-                                                        <ul class="nav__inner is-custom-scrollbar">
-                                                            <li class="nav__item is-dd is-open"> <a href="cosmetology.html" class="nav__item_link">Инъекционная
-                                                                    косметология</a>
-                                                                <ul class="nav nav--level-2">
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Коррекция мимических морщин
-                                                                            ботулотоксином</a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link is-badge">Контурная пластика <span class="badge">топ</span></a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Увеличение губ</a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link is-selected">Биоревитализация</a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Плазмотерапия</a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Мезотерапия</a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Плацентарная терапия</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="nav__item is-dd is-open"> <a href="cosmetology.html" class="nav__item_link">Аппаратная
-                                                                    косметология</a>
-                                                                <ul class="nav nav--level-2">
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Фотоомоложение</a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link is-badge">Удаление пигментных пятен<span class="badge">-25%</span></a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Удаление сосудистых звездочек, сосудов,
-                                                                            капиляров</a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Карбокситерапия</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="nav__item is-dd is-open"> <a href="cosmetology.html" class="nav__item_link">Лечение проблемной
-                                                                    кожи</a>
-                                                                <ul class="nav nav--level-2">
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Розацея</a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Эритроз</a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Акне</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="nav__item is-dd is-open"> <a href="cosmetology.html" class="nav__item_link">Чистка лица</a>
-                                                                <ul class="nav nav--level-2">
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Ультразвуковая</a></li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Комбинированная (ультразвук+механич.)</a>
-                                                                    </li>
-                                                                    <li class="nav__item"> <a href="cosmetology.html" class="nav__item_link">Атравматическая Holy land Anubis
-                                                                            (Барселона)</a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-
-                                                <li class="mainMenu__item is-dd">
-                                                    <a href="cosmetology.html" class="mainMenu__item_link">Косметология</a>
-
-
-                                                    <ul class="nav nav--level-1 nav--catalog">
-                                                        <li class="nav__item"> <a href="index.html" class="nav__item_link">Коррекция мимических морщин
-                                                                ботулотоксином</a></li>
-                                                        <li class="nav__item"> <a href="index.html" class="nav__item_link">Контурная пластика</a></li>
-                                                        <li class="nav__item"> <a href="index.html" class="nav__item_link">Увеличение губ</a></li>
-                                                        <li class="nav__item"> <a href="index.html" class="nav__item_link is-selected">Биоревитализация</a></li>
-                                                        <li class="nav__item"> <a href="index.html" class="nav__item_link">Плазмотерапия</a></li>
-                                                        <li class="nav__item"> <a href="index.html" class="nav__item_link">Мезотерапия</a></li>
-                                                        <li class="nav__item"> <a href="index.html" class="nav__item_link">Плацентарная терапия</a></li>
-                                                    </ul>
-
-
-                                                </li>
-                                                <li class="mainMenu__item">
-                                                    <a href="directions.html" class="mainMenu__item_link">Оборудование</a>
-                                                </li>
-                                                <li class="mainMenu__item">
-                                                    <a href="404.html" class="mainMenu__item_link">Лаборатория</a>
-                                                </li>
-
-                                                <li class="mainMenu__item">
-                                                    <a href="action.html" class="mainMenu__item_link">Акции</a>
-                                                </li>
-                                                <li class="mainMenu__item">
-                                                    <a href="specialists.html" class="mainMenu__item_link">Специалисты</a>
-                                                </li>
-                                                <li class="mainMenu__item">
-                                                    <a href="demo.html" class="mainMenu__item_link">О клинике</a>
-                                                </li>
-                                                <li class="mainMenu__item">
-                                                    <a href="contacts.html" class="mainMenu__item_link">Контакты</a>
-                                                </li>
-                                            </ul>
+                                            <!--header menu-->
+                                            <? $APPLICATION->IncludeComponent(
+                                                "bitrix:menu",
+                                                "horizontal_multilevel_custom",
+                                                array(
+                                                    "ROOT_MENU_TYPE" => "top",
+                                                    "MENU_CACHE_TYPE" => "A",
+                                                    "MENU_CACHE_TIME" => "36000000",
+                                                    "MENU_CACHE_USE_GROUPS" => "N",
+                                                    "MENU_CACHE_GET_VARS" => array(),
+                                                    "MAX_LEVEL" => "3",
+                                                    "CHILD_MENU_TYPE" => "top",
+                                                    "USE_EXT" => "Y",
+                                                    "DELAY" => "N",
+                                                    "ALLOW_MULTI_SELECT" => "Y"
+                                                ),
+                                                false
+                                            ); ?>
+                                            <!--header menu END-->
                                         </nav>
-                                    </div> -->
-                                    <!--header menu END-->
-
+                                    </div>
                                 </div>
                                 <div class="c_slide__footer">
 
