@@ -20,6 +20,7 @@ if ($this->StartResultCache()) {
 	} else {
 		$arFilter = array(
 			"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+			// "SECTION_ID" => $arParams["SECTION_ID"],
 			"GLOBAL_ACTIVE" => "Y",
 			"IBLOCK_ACTIVE" => "Y",
 			"<=" . "DEPTH_LEVEL" => $arParams["DEPTH_LEVEL"],
@@ -146,5 +147,7 @@ foreach ($arResult["SECTIONS"] as $arSection) {
 		);
 	}
 }
+
+// d($aMenuLinksNew);
 
 return $aMenuLinksNew;

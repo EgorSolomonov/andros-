@@ -3,8 +3,6 @@
 	<ul class="mainMenu js-mainmenu">
 
 		<?
-
-		// d($arResult);
 		$previousLevel = 0;
 		foreach ($arResult as $arItem) :
 		?>

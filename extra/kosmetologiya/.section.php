@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Косметология";
+$arDirProperties = Array(
+
+);
+?>
