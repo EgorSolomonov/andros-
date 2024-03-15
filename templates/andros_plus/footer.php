@@ -14,44 +14,40 @@
             <div class="footer__col footer__col--nav">
                 <ul class="nav">
                     <li class="nav__item nav__item--title">
-                        Медицина
+                        <a href="/meditsina/">Медицина</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Урология</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Гинекология</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link is-selected">Неврология</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Оториноларингология</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">УЗИ</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Эндокринология</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Проктология</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Хирургия</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Травмотология-ортопедия</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Терапия-пульмонология</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Кардиология</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Онкология</a>
-                    </li>
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:catalog.section.list",
+                        "footer_menu_lvl2",
+                        array(
+                            "ADD_SECTIONS_CHAIN" => "N",
+                            "CACHE_FILTER" => "N",
+                            "CACHE_GROUPS" => "Y",
+                            "CACHE_TIME" => "36000000",
+                            "CACHE_TYPE" => "A",
+                            "COUNT_ELEMENTS" => "Y",
+                            "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+                            "FILTER_NAME" => "sectionsFilter",
+                            "IBLOCK_ID" => "9",
+                            "IBLOCK_TYPE" => "catalog",
+                            "SECTION_CODE" => "",
+                            "SECTION_FIELDS" => array(
+                                0 => "",
+                                1 => "",
+                            ),
+                            "SECTION_ID" => '91',
+                            "SECTION_URL" => "",
+                            "SECTION_USER_FIELDS" => array(
+                                0 => "",
+                                1 => "",
+                            ),
+                            "SHOW_PARENT_NAME" => "Y",
+                            "TOP_DEPTH" => "3",
+                            "VIEW_MODE" => "LINE",
+                            "COMPONENT_TEMPLATE" => "footer_menu_lvl2"
+                        ),
+                        false
+                    ); ?>
                 </ul>
             </div>
 
@@ -62,41 +58,52 @@
             <div class="footer__col footer__col--nav">
                 <ul class="nav">
                     <li class="nav__item nav__item--title">
-                        Косметология
+                        <a href="/kosmetologiya/">Косметология</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Инъекционная косметология</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Аппаратная косметология</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Лечение проблемной кожи</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Чистка лица</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Трихология</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Эпиляция</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="catalog.html" class="nav__item_link">Массаж</a>
-                    </li>
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:catalog.section.list",
+                        "footer_menu_lvl2",
+                        array(
+                            "ADD_SECTIONS_CHAIN" => "N",
+                            "CACHE_FILTER" => "N",
+                            "CACHE_GROUPS" => "Y",
+                            "CACHE_TIME" => "36000000",
+                            "CACHE_TYPE" => "A",
+                            "COUNT_ELEMENTS" => "Y",
+                            "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+                            "FILTER_NAME" => "sectionsFilter",
+                            "IBLOCK_ID" => "9",
+                            "IBLOCK_TYPE" => "catalog",
+                            "SECTION_CODE" => "",
+                            "SECTION_FIELDS" => array(
+                                0 => "",
+                                1 => "",
+                            ),
+                            "SECTION_ID" => "92",
+                            "SECTION_URL" => "",
+                            "SECTION_USER_FIELDS" => array(
+                                0 => "",
+                                1 => "",
+                            ),
+                            "SHOW_PARENT_NAME" => "Y",
+                            "TOP_DEPTH" => "3",
+                            "VIEW_MODE" => "LINE",
+                            "COMPONENT_TEMPLATE" => "footer_menu_lvl2"
+                        ),
+                        false
+                    ); ?>
                 </ul>
             </div>
 
 
             <div class="footer__col footer__col--nav">
                 <ul class="nav">
-                    <li class="nav__item nav__item--title"><a href="catalog.html" class="nav__item_link">Оборудование</a></li>
-                    <li class="nav__item nav__item--title"><a href="catalog.html" class="nav__item_link">Лаборатория</a></li>
-                    <li class="nav__item nav__item--title"><a href="catalog.html" class="nav__item_link">Акции</a></li>
-                    <li class="nav__item nav__item--title"><a href="catalog.html" class="nav__item_link">Специалисты</a></li>
-                    <li class="nav__item nav__item--title"><a href="catalog.html" class="nav__item_link">О клинике</a></li>
-                    <li class="nav__item nav__item--title"><a href="catalog.html" class="nav__item_link">Контакты</a></li>
+                    <li class="nav__item nav__item--title"><a href="/oborudovanie/" class="nav__item_link">Оборудование</a></li>
+                    <li class="nav__item nav__item--title"><a href="/laboratoriya/" class="nav__item_link">Лаборатория</a></li>
+                    <li class="nav__item nav__item--title"><a href="/aktsii/" class="nav__item_link">Акции</a></li>
+                    <li class="nav__item nav__item--title"><a href="/spetsialisty/" class="nav__item_link">Специалисты</a></li>
+                    <li class="nav__item nav__item--title"><a href="/o-klinike/" class="nav__item_link">О клинике</a></li>
+                    <li class="nav__item nav__item--title"><a href="/kontakty/" class="nav__item_link">Контакты</a></li>
                 </ul>
             </div>
 

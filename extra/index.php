@@ -285,28 +285,28 @@ $GLOBALS["arrFilterMain"] = array("PROPERTY_MAIN_VALUE" => 1);
 
 	<!-- section callback form -->
 	<? $APPLICATION->IncludeComponent(
-	"bitrix:form.result.new", 
-	"callback_form", 
-	array(
-		"COMPONENT_TEMPLATE" => "callback_form",
-		"WEB_FORM_ID" => "1",
-		"IGNORE_CUSTOM_TEMPLATE" => "N",
-		"USE_EXTENDED_ERRORS" => "Y",
-		"SEF_MODE" => "N",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600",
-		"LIST_URL" => "",
-		"EDIT_URL" => "",
-		"SUCCESS_URL" => "",
-		"CHAIN_ITEM_TEXT" => "",
-		"CHAIN_ITEM_LINK" => "",
-		"VARIABLE_ALIASES" => array(
-			"WEB_FORM_ID" => "WEB_FORM_ID",
-			"RESULT_ID" => "RESULT_ID",
-		)
-	),
-	false
-); ?>
+		"bitrix:form.result.new",
+		"callback_form",
+		array(
+			"COMPONENT_TEMPLATE" => "callback_form",
+			"WEB_FORM_ID" => "1",
+			"IGNORE_CUSTOM_TEMPLATE" => "N",
+			"USE_EXTENDED_ERRORS" => "Y",
+			"SEF_MODE" => "N",
+			"CACHE_TYPE" => "A",
+			"CACHE_TIME" => "3600",
+			"LIST_URL" => "",
+			"EDIT_URL" => "",
+			"SUCCESS_URL" => "",
+			"CHAIN_ITEM_TEXT" => "",
+			"CHAIN_ITEM_LINK" => "",
+			"VARIABLE_ALIASES" => array(
+				"WEB_FORM_ID" => "WEB_FORM_ID",
+				"RESULT_ID" => "RESULT_ID",
+			)
+		),
+		false
+	); ?>
 	<!-- section callback END -->
 
 	<!--section carousel-->
@@ -400,22 +400,19 @@ $GLOBALS["arrFilterMain"] = array("PROPERTY_MAIN_VALUE" => 1);
 						<div class="editor homeAbout__desc_content">
 
 							<blockquote>
-
-
-								<p>Мы рады видеть вас на сайте нашей косметологической клиники Андрос+. </p>
-
-								<p>Мы знаем, что вы хотите выглядеть красиво и естественно, поэтому наши опытные и профессиональные врачи и косметологи помогут вам в этом. Мы используем только проверенные и безопасные методы и препараты, чтобы ваша кожа оставалась здоровой и сияющей. </p>
-
-								<p>Наша цель - подчеркнуть вашу уникальную красоту и помочь вам чувствовать себя уверенно. Позвольте нам поработать над тем, чтобы вы выглядели и чувствовали себя великолепно!</p>
+								<? $APPLICATION->IncludeFile(
+									SITE_TEMPLATE_PATH . "/include/main_page/about_clinic.php",
+									array(),
+									array("MODE" => "text", "NAME" => 'О клинике')
+								) ?>
 							</blockquote>
 
 						</div>
-						<div class="homeAbout__desc_spec">
-							Основатель клиники, врач-дерматолог...
-						</div>
-						<div class="homeAbout__desc_author">
-							Иванов Иван Иванович
-						</div>
+						<? $APPLICATION->IncludeFile(
+							SITE_TEMPLATE_PATH . "/include/main_page/about_clinic_founder.php",
+							array(),
+							array("MODE" => "text", "NAME" => 'О клинике основатель')
+						) ?>
 					</div>
 					<div class="homeAbout__image">
 
