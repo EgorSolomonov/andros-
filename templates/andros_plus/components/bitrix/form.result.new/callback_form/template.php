@@ -2,8 +2,7 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
 <?
-d($arResult);
-d($templateFolder);
+// d($arResult);
 ?>
 <div class="section section--callback ">
 	<div class="r_box section__inner">
@@ -57,9 +56,7 @@ d($templateFolder);
 							</div>
 						</div>
 						<div class="form__group form__group--complete">
-							<? if ($arResult["isFormNote"] === "Y") : ?>
-								<div class="alert alert--no-border alert--success">Сообщение успешно отправлено, спасибо!</div>
-							<? endif; ?>
+							<div class="alert alert--no-border alert--success">Сообщение успешно отправлено, спасибо!</div>
 						</div>
 					</form>
 				</div>

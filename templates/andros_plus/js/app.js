@@ -5,7 +5,6 @@ const $html = document.querySelector("html");
 var core = (function () {
   return {
     init: function () {
-      core.initWebPcheck();
       core.initDefault();
       core.initResize();
     },
@@ -164,8 +163,9 @@ var core = (function () {
 									<input type="submit" value="${buttonText}" class="btn is-loading" style="width: ${buttonElement.offsetWidth}px;">
 							`;
         } else {
+          // изменил кнопку немного после отправки
           buttonElement.outerHTML = `
-									<input type="submit" value="${buttonElement.value}">
+									<input type="submit" name="web_form_submit" class="btn btn--submit size--lg" value="${buttonElement.value}">
 							`;
         }
       } else if (!settings.block) {
@@ -208,7 +208,10 @@ var core = (function () {
         if (input.type == "checkbox" || input.type == "radio") {
           input.checked = false;
         } else {
-          input.value = "";
+          // Добавил кнопку в исключение
+          if (input.type !== "submit") {
+            input.value = "";
+          }
         }
       });
     },
@@ -308,16 +311,17 @@ var core = (function () {
       $body.classList.add(
         core.isTouchDevice() ? "is-touchdevice" : "is-no-touchdevice"
       ); // check touchdevice support
-
-      if (core.isTouchDevice() == false && core.getViewPort().width > 1199) {
-        menuApp.hoverIntent();
-      }
-      core.isHasIOSline();
+      core.initWebPcheck(); // check webp support
+      core.isHasIOSline(); // check for ios bottom line
       core.loader("create"); // create loader in DOM
       core.initFormRestrictRules(); // init custom restricts for inputs
+      core.initPhoneMask(); // set phone masks
+      core.getResetError(); // reset form errors
       core.initClearHandlers();
-      core.initPhoneMask();
-      core.getResetError();
+
+      if (core.isTouchDevice() == false && core.getViewPort().width > 1199) {
+        menuApp.hoverIntent(); // menu hover intent init
+      }
     },
   };
 })();
@@ -1242,8 +1246,6 @@ const homeSlider = new Swiper(
   ".js-mainbanner-carousel.is-interactive .swiper",
   {
     speed: 600,
-    //autoHeight: true,
-    //effect: 'fade',
     slidesPerView: 1,
     spaceBetween: 0,
     autoplay: {
@@ -1261,8 +1263,29 @@ const homeSlider = new Swiper(
         return '<span class="' + className + '">' + (index + 1) + "</span>";
       },
     },
+    on: {
+      init: function () {
+        updateSlide(this);
+      },
+      slideChange: function () {
+        updateSlide(this);
+      },
+    },
   }
 );
+
+function updateSlide(swiperInstance) {
+  let index = swiperInstance.realIndex;
+  let id = swiperInstance.slides[index].dataset.sideimg;
+  let sideImgs = document.querySelectorAll(".homeBanner .side__img");
+  let currSlide = document.querySelector(
+    '.homeBanner .side__img[data-id="' + id + '"]'
+  );
+  sideImgs.forEach((item) => {
+    item.classList.remove("is-shown");
+  });
+  currSlide.classList.add("is-shown");
+}
 
 // resize events
 window.addEventListener("resize", () => {

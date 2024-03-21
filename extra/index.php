@@ -10,78 +10,74 @@ $GLOBALS["arrFilterMain"] = array("PROPERTY_MAIN_VALUE" => 1);
 		<div class="logo__banner">
 			<img class="lazyload" src="<?= SITE_TEMPLATE_PATH ?>/assets/blank.png" data-src="<?= SITE_TEMPLATE_PATH ?>/assets/logo-banner-2.svg" alt="logo-banner-2">
 		</div>
-		<div class="container">
 
-			<? $APPLICATION->IncludeComponent(
-				"bitrix:news.list",
-				"main_slider",
-				array(
-					"ACTIVE_DATE_FORMAT" => "d.m.Y",
-					"ADD_SECTIONS_CHAIN" => "Y",
-					"AJAX_MODE" => "N",
-					"AJAX_OPTION_ADDITIONAL" => "",
-					"AJAX_OPTION_HISTORY" => "N",
-					"AJAX_OPTION_JUMP" => "N",
-					"AJAX_OPTION_STYLE" => "Y",
-					"CACHE_FILTER" => "N",
-					"CACHE_GROUPS" => "Y",
-					"CACHE_TIME" => "36000000",
-					"CACHE_TYPE" => "A",
-					"CHECK_DATES" => "Y",
-					"DETAIL_URL" => "",
-					"DISPLAY_BOTTOM_PAGER" => "Y",
-					"DISPLAY_DATE" => "Y",
-					"DISPLAY_NAME" => "Y",
-					"DISPLAY_PICTURE" => "Y",
-					"DISPLAY_PREVIEW_TEXT" => "Y",
-					"DISPLAY_TOP_PAGER" => "N",
-					"FIELD_CODE" => array(
-						0 => "",
-						1 => "",
-					),
-					"FILTER_NAME" => "",
-					"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-					"IBLOCK_ID" => "12",
-					"IBLOCK_TYPE" => "main_slider",
-					"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-					"INCLUDE_SUBSECTIONS" => "Y",
-					"MESSAGE_404" => "",
-					"NEWS_COUNT" => "10",
-					"PAGER_BASE_LINK_ENABLE" => "N",
-					"PAGER_DESC_NUMBERING" => "N",
-					"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-					"PAGER_SHOW_ALL" => "N",
-					"PAGER_SHOW_ALWAYS" => "N",
-					"PAGER_TEMPLATE" => ".default",
-					"PARENT_SECTION" => "",
-					"PARENT_SECTION_CODE" => "",
-					"PREVIEW_TRUNCATE_LEN" => "",
-					"PROPERTY_CODE" => array(
-						0 => "",
-						1 => "",
-					),
-					"SET_BROWSER_TITLE" => "N",
-					"SET_LAST_MODIFIED" => "N",
-					"SET_META_DESCRIPTION" => "N",
-					"SET_META_KEYWORDS" => "N",
-					"SET_STATUS_404" => "N",
-					"SET_TITLE" => "N",
-					"SHOW_404" => "N",
-					"SORT_BY1" => "ACTIVE_FROM",
-					"SORT_BY2" => "SORT",
-					"SORT_ORDER1" => "DESC",
-					"SORT_ORDER2" => "ASC",
-					"STRICT_SECTION_CHECK" => "N",
-					"COMPONENT_TEMPLATE" => "main_slider",
-					"DISPLAY_IMG_WIDTH" => "136",
-					"DISPLAY_IMG_HEIGHT" => "101",
-					"USE_RSS" => "Y",
+		<? $APPLICATION->IncludeComponent(
+			"bitrix:news.list",
+			"main_slider",
+			array(
+				"ACTIVE_DATE_FORMAT" => "d.m.Y",
+				"ADD_SECTIONS_CHAIN" => "Y",
+				"AJAX_MODE" => "N",
+				"AJAX_OPTION_ADDITIONAL" => "",
+				"AJAX_OPTION_HISTORY" => "N",
+				"AJAX_OPTION_JUMP" => "N",
+				"AJAX_OPTION_STYLE" => "Y",
+				"CACHE_FILTER" => "N",
+				"CACHE_GROUPS" => "Y",
+				"CACHE_TIME" => "36000000",
+				"CACHE_TYPE" => "A",
+				"CHECK_DATES" => "Y",
+				"DETAIL_URL" => "",
+				"DISPLAY_BOTTOM_PAGER" => "Y",
+				"DISPLAY_DATE" => "Y",
+				"DISPLAY_NAME" => "Y",
+				"DISPLAY_PICTURE" => "Y",
+				"DISPLAY_PREVIEW_TEXT" => "Y",
+				"DISPLAY_TOP_PAGER" => "N",
+				"FIELD_CODE" => array(
+					0 => "",
+					1 => "",
 				),
-				false
-			); ?><br>
-
-
-		</div>
+				"FILTER_NAME" => "",
+				"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+				"IBLOCK_ID" => "12",
+				"IBLOCK_TYPE" => "main_slider",
+				"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+				"INCLUDE_SUBSECTIONS" => "Y",
+				"MESSAGE_404" => "",
+				"NEWS_COUNT" => "10",
+				"PAGER_BASE_LINK_ENABLE" => "N",
+				"PAGER_DESC_NUMBERING" => "N",
+				"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+				"PAGER_SHOW_ALL" => "N",
+				"PAGER_SHOW_ALWAYS" => "N",
+				"PAGER_TEMPLATE" => ".default",
+				"PARENT_SECTION" => "",
+				"PARENT_SECTION_CODE" => "",
+				"PREVIEW_TRUNCATE_LEN" => "",
+				"PROPERTY_CODE" => array(
+					0 => "",
+					1 => "",
+				),
+				"SET_BROWSER_TITLE" => "N",
+				"SET_LAST_MODIFIED" => "N",
+				"SET_META_DESCRIPTION" => "N",
+				"SET_META_KEYWORDS" => "N",
+				"SET_STATUS_404" => "N",
+				"SET_TITLE" => "N",
+				"SHOW_404" => "N",
+				"SORT_BY1" => "ACTIVE_FROM",
+				"SORT_BY2" => "SORT",
+				"SORT_ORDER1" => "DESC",
+				"SORT_ORDER2" => "ASC",
+				"STRICT_SECTION_CHECK" => "N",
+				"COMPONENT_TEMPLATE" => "main_slider",
+				"DISPLAY_IMG_WIDTH" => "136",
+				"DISPLAY_IMG_HEIGHT" => "101",
+				"USE_RSS" => "Y",
+			),
+			false
+		); ?><br>
 
 	</div>
 </div>
@@ -309,7 +305,7 @@ $GLOBALS["arrFilterMain"] = array("PROPERTY_MAIN_VALUE" => 1);
 	); ?>
 	<!-- section callback END -->
 
-	<!--section carousel-->
+	<!--section carousel specialists -->
 	<? $APPLICATION->IncludeComponent(
 		"bitrix:news.list",
 		"main_specialist_carousel",
@@ -380,7 +376,7 @@ $GLOBALS["arrFilterMain"] = array("PROPERTY_MAIN_VALUE" => 1);
 		),
 		false
 	); ?>
-	<!--section carousel END-->
+	<!--section carousel specialists END-->
 
 </div>
 
@@ -414,6 +410,13 @@ $GLOBALS["arrFilterMain"] = array("PROPERTY_MAIN_VALUE" => 1);
 							array("MODE" => "text", "NAME" => 'О клинике основатель')
 						) ?>
 					</div>
+					<?
+					// $APPLICATION->IncludeFile(
+					// 	SITE_TEMPLATE_PATH . "/include/main_page/about_clinic_image.php",
+					// 	array(),
+					// 	array("MODE" => "text", "NAME" => 'О клинике фото')
+					// ) 
+					?>
 					<div class="homeAbout__image">
 
 					</div>
@@ -425,120 +428,75 @@ $GLOBALS["arrFilterMain"] = array("PROPERTY_MAIN_VALUE" => 1);
 <!-- section about end -->
 
 <div class="container">
-	<!--section carousel-->
-	<div class="section section--carousel section--video">
-		<div class="section__header section__header--center">
-			<div class="section__header_title">
-				<h2>Будьте с нами онлайн</h2>
-			</div>
-			<div class="section__header_subtitle">
-				Понятным языком рассказываем об услугах, инновациях, даем профессиональные советы
-			</div>
-		</div>
-		<div class="section__content">
-			<div class="cardsGrid cardsGrid--carousel cardsGrid--video specialistsGrid js-cards-carousel">
-				<div class="swiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<!--card-->
-							<div class="card">
-								<div class="card__image ratio ratio--catalog">
-									<a href="https://www.youtube.com/watch?v=BHACKCNDMW8" data-fancybox="video" class="ratio__item ratio__item--contain card__image_link r_thumbitem r_thumbitem--video">
-
-										<picture>
-											<source data-srcset="assets/video-1.webp" srcset="assets/blank.png" type="image/webp">
-											<img class="lazyload card__image_src" src="assets/blank.png" data-src="assets/video-1.jpg" alt>
-										</picture>
-									</a>
-								</div>
-								<div class="card__title">
-									<h3>SMAS-лифтинг, узнай как проходит процедура</h3>
-								</div>
-							</div>
-							<!--card END-->
-						</div>
-						<div class="swiper-slide">
-							<!--card-->
-							<div class="card">
-								<div class="card__image ratio ratio--catalog">
-									<a href="https://www.youtube.com/watch?v=BHACKCNDMW8" data-fancybox="video" class="ratio__item ratio__item--contain card__image_link r_thumbitem r_thumbitem--video">
-
-										<picture>
-											<source data-srcset="assets/video-2.webp" srcset="assets/blank.png" type="image/webp">
-											<img class="lazyload card__image_src" src="assets/blank.png" data-src="assets/video-2.jpg" alt>
-										</picture>
-									</a>
-								</div>
-								<div class="card__title">
-									<h3>Как подготовиться к УЗИ?</h3>
-								</div>
-							</div>
-							<!--card END-->
-						</div>
-						<div class="swiper-slide">
-							<!--card-->
-							<div class="card">
-								<div class="card__image ratio ratio--catalog">
-									<a href="https://www.youtube.com/watch?v=BHACKCNDMW8" data-fancybox="video" class="ratio__item ratio__item--contain card__image_link r_thumbitem r_thumbitem--video">
-
-										<picture>
-											<source data-srcset="assets/video-1.webp" srcset="assets/blank.png" type="image/webp">
-											<img class="lazyload card__image_src" src="assets/blank.png" data-src="assets/video-1.jpg" alt>
-										</picture>
-									</a>
-								</div>
-								<div class="card__title">
-									<h3>SMAS-лифтинг, узнай как проходит процедура</h3>
-								</div>
-							</div>
-							<!--card END-->
-						</div>
-						<div class="swiper-slide">
-							<!--card-->
-							<div class="card">
-								<div class="card__image ratio ratio--catalog">
-									<a href="https://www.youtube.com/watch?v=BHACKCNDMW8" data-fancybox="video" class="ratio__item ratio__item--contain card__image_link r_thumbitem r_thumbitem--video">
-
-										<picture>
-											<source data-srcset="assets/video-2.webp" srcset="assets/blank.png" type="image/webp">
-											<img class="lazyload card__image_src" src="assets/blank.png" data-src="assets/video-2.jpg" alt>
-										</picture>
-									</a>
-								</div>
-								<div class="card__title">
-									<h3>Как подготовиться к УЗИ?</h3>
-								</div>
-							</div>
-							<!--card END-->
-						</div>
-						<div class="swiper-slide">
-							<!--card-->
-							<div class="card">
-								<div class="card__image ratio ratio--catalog">
-									<a href="https://www.youtube.com/watch?v=BHACKCNDMW8" data-fancybox="video" class="ratio__item ratio__item--contain card__image_link r_thumbitem r_thumbitem--video">
-
-										<picture>
-											<source data-srcset="assets/video-1.webp" srcset="assets/blank.png" type="image/webp">
-											<img class="lazyload card__image_src" src="assets/blank.png" data-src="assets/video-1.jpg" alt>
-										</picture>
-									</a>
-								</div>
-								<div class="card__title">
-									<h3>SMAS-лифтинг, узнай как проходит процедура</h3>
-								</div>
-							</div>
-							<!--card END-->
-						</div>
-					</div>
-				</div>
-				<div class="swiper__buttons">
-					<div class="swiper__button swiper__button--prev js-button-left"></div>
-					<div class="swiper__button swiper__button--next js-button-right"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--section carousel END-->
+	<!--section carousel be with us-->
+	<? $APPLICATION->IncludeComponent(
+		"bitrix:news.list",
+		"main_be_with_us_video",
+		array(
+			"ACTIVE_DATE_FORMAT" => "d.m.Y",
+			"ADD_SECTIONS_CHAIN" => "Y",
+			"AJAX_MODE" => "N",
+			"AJAX_OPTION_ADDITIONAL" => "",
+			"AJAX_OPTION_HISTORY" => "N",
+			"AJAX_OPTION_JUMP" => "N",
+			"AJAX_OPTION_STYLE" => "Y",
+			"CACHE_FILTER" => "N",
+			"CACHE_GROUPS" => "Y",
+			"CACHE_TIME" => "36000000",
+			"CACHE_TYPE" => "A",
+			"CHECK_DATES" => "Y",
+			"DETAIL_URL" => "",
+			"DISPLAY_BOTTOM_PAGER" => "Y",
+			"DISPLAY_DATE" => "Y",
+			"DISPLAY_NAME" => "Y",
+			"DISPLAY_PICTURE" => "Y",
+			"DISPLAY_PREVIEW_TEXT" => "Y",
+			"DISPLAY_TOP_PAGER" => "N",
+			"FIELD_CODE" => array(
+				0 => "",
+				1 => "",
+			),
+			"FILTER_NAME" => "",
+			"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+			"IBLOCK_ID" => "15",
+			"IBLOCK_TYPE" => "content",
+			"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+			"INCLUDE_SUBSECTIONS" => "Y",
+			"MESSAGE_404" => "",
+			"NEWS_COUNT" => "20",
+			"PAGER_BASE_LINK_ENABLE" => "N",
+			"PAGER_DESC_NUMBERING" => "N",
+			"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+			"PAGER_SHOW_ALL" => "N",
+			"PAGER_SHOW_ALWAYS" => "N",
+			"PAGER_TEMPLATE" => ".default",
+			"PARENT_SECTION" => "",
+			"PARENT_SECTION_CODE" => "",
+			"PREVIEW_TRUNCATE_LEN" => "",
+			"PROPERTY_CODE" => array(
+				0 => "VIDEO",
+				1 => "",
+			),
+			"SET_BROWSER_TITLE" => "N",
+			"SET_LAST_MODIFIED" => "N",
+			"SET_META_DESCRIPTION" => "N",
+			"SET_META_KEYWORDS" => "N",
+			"SET_STATUS_404" => "N",
+			"SET_TITLE" => "N",
+			"SHOW_404" => "N",
+			"SORT_BY1" => "ACTIVE_FROM",
+			"SORT_BY2" => "SORT",
+			"SORT_ORDER1" => "DESC",
+			"SORT_ORDER2" => "ASC",
+			"STRICT_SECTION_CHECK" => "N",
+			"COMPONENT_TEMPLATE" => "main_benefits",
+			"DISPLAY_IMG_WIDTH" => "136",
+			"DISPLAY_IMG_HEIGHT" => "101",
+			"USE_RSS" => "Y",
+		),
+		false
+	); ?>
+	<!--section carousel be with us END-->
 </div>
 
 

@@ -3,13 +3,7 @@
 <footer class="footer">
     <div class="container">
 
-
-
-
         <div class="footer__row footer__row--top">
-
-
-
 
             <div class="footer__col footer__col--nav">
                 <ul class="nav">
@@ -28,14 +22,14 @@
                             "COUNT_ELEMENTS" => "Y",
                             "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
                             "FILTER_NAME" => "sectionsFilter",
-                            "IBLOCK_ID" => "9",
+                            "IBLOCK_ID" => "14",
                             "IBLOCK_TYPE" => "catalog",
                             "SECTION_CODE" => "",
                             "SECTION_FIELDS" => array(
                                 0 => "",
                                 1 => "",
                             ),
-                            "SECTION_ID" => '91',
+                            "SECTION_ID" => '98',
                             "SECTION_URL" => "",
                             "SECTION_USER_FIELDS" => array(
                                 0 => "",
@@ -50,10 +44,6 @@
                     ); ?>
                 </ul>
             </div>
-
-
-
-
 
             <div class="footer__col footer__col--nav">
                 <ul class="nav">
@@ -72,14 +62,14 @@
                             "COUNT_ELEMENTS" => "Y",
                             "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
                             "FILTER_NAME" => "sectionsFilter",
-                            "IBLOCK_ID" => "9",
+                            "IBLOCK_ID" => "14",
                             "IBLOCK_TYPE" => "catalog",
                             "SECTION_CODE" => "",
                             "SECTION_FIELDS" => array(
                                 0 => "",
                                 1 => "",
                             ),
-                            "SECTION_ID" => "92",
+                            "SECTION_ID" => "97",
                             "SECTION_URL" => "",
                             "SECTION_USER_FIELDS" => array(
                                 0 => "",
@@ -386,8 +376,8 @@
     <a href="action.html" class="actionsFloat__image">
 
         <picture>
-            <source srcset="assets/action-1.webp" type="image/webp">
-            <img src="assets/action-1.jpg" alt>
+            <source srcset="<?= SITE_TEMPLATE_PATH ?>/assets/action-1.webp" type="image/webp">
+            <img src="<?= SITE_TEMPLATE_PATH ?>/assets/action-1.jpg" alt>
         </picture>
     </a>
     <div class="container r_toast__wrap">

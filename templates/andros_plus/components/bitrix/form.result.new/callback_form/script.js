@@ -28,6 +28,7 @@ function ajaxForm(obForm, link) {
             } else {
               // Показываем сообщение об успешной отправке
               // popupSuccess()
+              // УПРАВЛЯЕТСЯ ИЗ ФАЙЛА app.js
             }
           }
         };

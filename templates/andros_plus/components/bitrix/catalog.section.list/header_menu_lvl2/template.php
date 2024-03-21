@@ -11,13 +11,13 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-//dump($arResult['SECTIONS_DEPTH_MORE_1']);
+// d($arResult);
 foreach ($arResult['SECTIONS'] as &$arSection) {
 	$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 	$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 ?>
 	<li class="mainMenu__item is-dd is-dd--full">
-		<a class="mainMenu__item_link" href="<?= $arSection["LINK"] ?>"> <?= $arSection["NAME"] ?> </a>
+		<a class="mainMenu__item_link" href="<?= $arSection["SECTION_PAGE_URL"] ?>"> <?= $arSection["NAME"] ?> </a>
 		<div class="nav nav--level-1 nav--catalog">
 			<ul class="nav__inner is-custom-scrollbar">
 				<? foreach ($arResult['SECTIONS_DEPTH_MORE_1'][$arSection['ID']] as $key => $depth2) : ?>

@@ -1,6 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 <?
 IncludeTemplateLangFile(__FILE__);
+$curPage = $APPLICATION->GetCurPage();
 ?>
 <!DOCTYPE html>
 <html lang="ru" class="no-js">
@@ -12,7 +13,9 @@ IncludeTemplateLangFile(__FILE__);
     // Bitrix files connection
     $APPLICATION->ShowHead();
     // CSS
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/base.min.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/page-demo.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/base.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/custom.css");
     // Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/custom.css");
     // // JS
     // Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/plugins.min.js");
@@ -35,7 +38,7 @@ IncludeTemplateLangFile(__FILE__);
         <!--header-->
         <header class="header">
             <div class="container">
-                <div class="header__inner">
+                <div class="header__inner" style="<? if ($curPage !== "/") : ?>background: #f8efe9;<? endif; ?>">
                     <div class="header__row header__row--top">
                         <div class="header__col header__col--logo">
                             <div class="logo">

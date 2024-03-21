@@ -70,39 +70,39 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
          $this->AddDeleteAction($arResult['SECTION']['ID'], $arResult['SECTION']['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
       ?><h2 class="mb-3" id="<? echo $this->GetEditAreaId($arResult['SECTION']['ID']); ?>"><?
-                                                                                             echo (
-                                                                                                isset($arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]) && $arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"] != ""
-                                                                                                ? $arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]
-                                                                                                : $arResult['SECTION']['NAME']
-                                                                                             );
-                                                                                             ?>
+                                                                                                echo (
+                                                                                                   isset($arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]) && $arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"] != ""
+                                                                                                   ? $arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]
+                                                                                                   : $arResult['SECTION']['NAME']
+                                                                                                );
+                                                                                                ?>
          </h2><?
             }
 
             if (0 < $arResult["SECTIONS_COUNT"]) {
                ?><ul class="<? echo $arCurView['LIST']; ?>"><?
 
-                                                            switch ($arParams['VIEW_MODE']) {
-                                                               case 'LINE':
-                                                                  foreach ($arResult['SECTIONS'] as &$arSection) {
-                                                                     $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-                                                                     $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
+                                                   switch ($arParams['VIEW_MODE']) {
+                                                      case 'LINE':
+                                                         foreach ($arResult['SECTIONS'] as &$arSection) {
+                                                            $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
+                                                            $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
-                                                                     if (false === $arSection['PICTURE'])
-                                                                        $arSection['PICTURE'] = array(
-                                                                           'SRC' => $arCurView['EMPTY_IMG'],
-                                                                           'ALT' => (
-                                                                              '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
-                                                                              ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
-                                                                              : $arSection["NAME"]
-                                                                           ),
-                                                                           'TITLE' => (
-                                                                              '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
-                                                                              ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
-                                                                              : $arSection["NAME"]
-                                                                           )
-                                                                        );
-                                                            ?>
+                                                            if (false === $arSection['PICTURE'])
+                                                               $arSection['PICTURE'] = array(
+                                                                  'SRC' => $arCurView['EMPTY_IMG'],
+                                                                  'ALT' => (
+                                                                     '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
+                                                                     ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
+                                                                     : $arSection["NAME"]
+                                                                  ),
+                                                                  'TITLE' => (
+                                                                     '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
+                                                                     ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
+                                                                     : $arSection["NAME"]
+                                                                  )
+                                                               );
+                                                   ?>
                      <li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>" class="catalog-section-list-item">
                         <div class="catalog-section-list-line-img-container">
                            <a href="<? echo $arSection['SECTION_PAGE_URL']; ?>" class="catalog-section-list-item-img" style="background-image:url('<? echo $arSection['PICTURE']['SRC']; ?>');" title="<? echo $arSection['PICTURE']['TITLE']; ?>"></a>
@@ -116,26 +116,26 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
                               ?>
                                  <span class="catalog-section-list-item-counter">(<? echo $arSection['ELEMENT_CNT']; ?>)</span>
                               <?
-                                                                     }
+                                                            }
                               ?>
                            </h3>
                            <? if ('' != $arSection['DESCRIPTION']) {
                            ?>
                               <p class="catalog-section-list-item-description"><? echo $arSection['DESCRIPTION']; ?></p>
                            <?
-                                                                     }
+                                                            }
                            ?>
                         </div>
 
                      </li><?
-                                                                  }
-                                                                  unset($arSection);
-                                                                  break;
+                                                         }
+                                                         unset($arSection);
+                                                         break;
 
-                                                               case 'TEXT':
-                                                                  foreach ($arResult['SECTIONS'] as &$arSection) {
-                                                                     $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-                                                                     $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
+                                                      case 'TEXT':
+                                                         foreach ($arResult['SECTIONS'] as &$arSection) {
+                                                            $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
+                                                            $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
                            ?>
                      <li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>" class="<?= $listColumsClass ?> catalog-section-list-item">
@@ -148,34 +148,34 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
                               ?>
                                  <span class="catalog-section-list-item-counter">(<? echo $arSection['ELEMENT_CNT']; ?>)</span>
                               <?
-                                                                     }
+                                                            }
                               ?>
                            </h3>
                         </div>
                      </li><?
-                                                                  }
-                                                                  unset($arSection);
-                                                                  break;
+                                                         }
+                                                         unset($arSection);
+                                                         break;
 
-                                                               case 'TILE':
-                                                                  foreach ($arResult['SECTIONS'] as &$arSection) {
-                                                                     $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-                                                                     $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
+                                                      case 'TILE':
+                                                         foreach ($arResult['SECTIONS'] as &$arSection) {
+                                                            $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
+                                                            $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
-                                                                     if (false === $arSection['PICTURE'])
-                                                                        $arSection['PICTURE'] = array(
-                                                                           'SRC' => $arCurView['EMPTY_IMG'],
-                                                                           'ALT' => (
-                                                                              '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
-                                                                              ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
-                                                                              : $arSection["NAME"]
-                                                                           ),
-                                                                           'TITLE' => (
-                                                                              '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
-                                                                              ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
-                                                                              : $arSection["NAME"]
-                                                                           )
-                                                                        );
+                                                            if (false === $arSection['PICTURE'])
+                                                               $arSection['PICTURE'] = array(
+                                                                  'SRC' => $arCurView['EMPTY_IMG'],
+                                                                  'ALT' => (
+                                                                     '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
+                                                                     ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
+                                                                     : $arSection["NAME"]
+                                                                  ),
+                                                                  'TITLE' => (
+                                                                     '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
+                                                                     ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
+                                                                     : $arSection["NAME"]
+                                                                  )
+                                                               );
                            ?>
                      <li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>" class="<?= $listColumsClass ?> catalog-section-list-item">
                         <div class="catalog-section-list-tile-img-container">
@@ -192,66 +192,66 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
                                  ?>
                                     <span class="catalog-section-list-item-counter">(<? echo $arSection['ELEMENT_CNT']; ?>)</span>
                                  <?
-                                                                        }
+                                                               }
                                  ?>
                               </h3>
                            </div>
                         <?
-                                                                     }
+                                                            }
                         ?>
                      </li>
                   <?
-                                                                  }
-                                                                  unset($arSection);
-                                                                  break;
+                                                         }
+                                                         unset($arSection);
+                                                         break;
 
-                                                               case 'LIST':
-                                                                  $intCurrentDepth = 1;
-                                                                  $boolFirst = true;
-                                                                  foreach ($arResult['SECTIONS'] as &$arSection) {
-                                                                     $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-                                                                     $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
+                                                      case 'LIST':
+                                                         $intCurrentDepth = 1;
+                                                         $boolFirst = true;
+                                                         foreach ($arResult['SECTIONS'] as &$arSection) {
+                                                            $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
+                                                            $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
-                                                                     if ($intCurrentDepth < $arSection['RELATIVE_DEPTH_LEVEL']) {
-                                                                        if (0 < $intCurrentDepth)
-                                                                           echo "\n", str_repeat("\t", $arSection['RELATIVE_DEPTH_LEVEL']), '<ul>';
-                                                                     } elseif ($intCurrentDepth == $arSection['RELATIVE_DEPTH_LEVEL']) {
-                                                                        if (!$boolFirst)
-                                                                           echo '</li>';
-                                                                     } else {
-                                                                        while ($intCurrentDepth > $arSection['RELATIVE_DEPTH_LEVEL']) {
-                                                                           echo '</li>', "\n", str_repeat("\t", $intCurrentDepth), '</ul>', "\n", str_repeat("\t", $intCurrentDepth - 1);
-                                                                           $intCurrentDepth--;
-                                                                        }
-                                                                        echo str_repeat("\t", $intCurrentDepth - 1), '</li>';
-                                                                     }
+                                                            if ($intCurrentDepth < $arSection['RELATIVE_DEPTH_LEVEL']) {
+                                                               if (0 < $intCurrentDepth)
+                                                                  echo "\n", str_repeat("\t", $arSection['RELATIVE_DEPTH_LEVEL']), '<ul>';
+                                                            } elseif ($intCurrentDepth == $arSection['RELATIVE_DEPTH_LEVEL']) {
+                                                               if (!$boolFirst)
+                                                                  echo '</li>';
+                                                            } else {
+                                                               while ($intCurrentDepth > $arSection['RELATIVE_DEPTH_LEVEL']) {
+                                                                  echo '</li>', "\n", str_repeat("\t", $intCurrentDepth), '</ul>', "\n", str_repeat("\t", $intCurrentDepth - 1);
+                                                                  $intCurrentDepth--;
+                                                               }
+                                                               echo str_repeat("\t", $intCurrentDepth - 1), '</li>';
+                                                            }
 
-                                                                     echo (!$boolFirst ? "\n" : ''), str_repeat("\t", $arSection['RELATIVE_DEPTH_LEVEL']);
+                                                            echo (!$boolFirst ? "\n" : ''), str_repeat("\t", $arSection['RELATIVE_DEPTH_LEVEL']);
                   ?>
                      <li class="catalog-section-list-item" id="<?= $this->GetEditAreaId($arSection['ID']); ?>">
                         <h3 class="catalog-section-list-list-title">
                            <a class="catalog-section-list-list-link" href="<? echo $arSection["SECTION_PAGE_URL"]; ?>"><? echo $arSection["NAME"]; ?><?
                                                                                                                                                       if ($arParams["COUNT_ELEMENTS"] && $arSection['ELEMENT_CNT'] !== null) {
                                                                                                                                                       ?> <span>(<? echo $arSection["ELEMENT_CNT"]; ?>)</span><?
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                               ?>
+                                                                                                                                                      }
+                                                                                       ?>
                            </a>
                         </h3>
                <?
 
-                                                                     $intCurrentDepth = $arSection['RELATIVE_DEPTH_LEVEL'];
-                                                                     $boolFirst = false;
-                                                                  }
-                                                                  unset($arSection);
-                                                                  while ($intCurrentDepth > 1) {
-                                                                     echo '</li>', "\n", str_repeat("\t", $intCurrentDepth), '</ul>', "\n", str_repeat("\t", $intCurrentDepth - 1);
-                                                                     $intCurrentDepth--;
-                                                                  }
-                                                                  if ($intCurrentDepth > 0) {
-                                                                     echo '</li>', "\n";
-                                                                  }
-                                                                  break;
-                                                            }
+                                                            $intCurrentDepth = $arSection['RELATIVE_DEPTH_LEVEL'];
+                                                            $boolFirst = false;
+                                                         }
+                                                         unset($arSection);
+                                                         while ($intCurrentDepth > 1) {
+                                                            echo '</li>', "\n", str_repeat("\t", $intCurrentDepth), '</ul>', "\n", str_repeat("\t", $intCurrentDepth - 1);
+                                                            $intCurrentDepth--;
+                                                         }
+                                                         if ($intCurrentDepth > 0) {
+                                                            echo '</li>', "\n";
+                                                         }
+                                                         break;
+                                                   }
                ?>
          </ul><?
             }
